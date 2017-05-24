@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <ul class="nav nav-tabs">
+        <li><a href="#item1" data-toggle="tab">第一项</a></li>
+        <li><a href="#item2" data-toggle="tab">第二项</a></li>
+        <li><a href="#item3" data-toggle="tab">第三项</a></li>
+        <li><a href="#item4" data-toggle="tab">第四项</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane" id="item1">
+            <p>互联网是做什么的？</p>
+            <p>互联网技能教育，免费的哦</p>
+        </div>
+        <div class="tab-pane" id="item2">
+            <p>p标签能不能不要自动补全成DOCTYPE</p>
+        </div>
+        <div class="tab-pane" id="item3">
+            <h3>第三项</h3>
+            <p>自动补全总是不好用</p>
+        </div>
+        <div class="tab-pane" id="item4">
+            <p>人生就是这样，不能如意如意</p>
+            <p>如我心意</p>
+        </div>
+    </div>
+
+
+
+    <script src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('li:eq(1) a').tab('show');
+        })
+    </script>
+</body>
+
+</html>

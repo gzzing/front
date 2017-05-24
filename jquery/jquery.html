@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+
+/**
+* 可看做函数，也可看作对象
+* 可看作构造函数
+* 也可以起别名
+* 
+* jQuery返回的是jQuery对象，jQuery对象是一个类数组对象
+* 类数组对象本质上就是对象，有数组的长度和下标，没有继承数组的方法
+*/
+var $ = jQuery = function(selector, context) {
+    //函数体
+
+/**
+ * 
+    return new jQuery(); //返回类的实例
+    此时$().jquery、$().size()返回堆栈溢出
+ *
+ */
+
+/**
+ * 
+    //使用工厂方法创建实例，将该方法放入jQuery.prototype原型对象中
+    //return jQuery.fn.init();
+ * 
+ */
+
+    /**
+     * 实例化init初始化类型，分隔作用域
+     * 将init构造器中的this和jQuery.fn对象中的this关键字隔离 
+     * 但是无法访问jQuery.fn对象的属性和方法
+     */
+    return new jQuery.fn.init(selector, context);
+    
+}
+
+/**
+ * js可以为所有函数绑定一个prototype属性，这个属性指向一个原型对象
+ * 原型对象中定义类的继承属性和方法
+ * 可为jQuery.prototype重命名
+ */
+jQuery.fn = jQuery.prototype = {
+    //扩展的原型对象
+    jquery: "1.3.2",    //原型属性
+    size: function() {  //原型方法
+        return this.length;
+    },
+    length: 1,
+    //将init看作构造函数
+    init: function(selector, context) {     //定义选择器构造器
+        selector = selector || document;    //设置默认值为document
+        context = context || document;
+
+        if (selector.nodeType) {            //如果选择符为节点对象
+            this[0] = selector;             //把参数节点传递给实例对象的数组
+            this.length = 1;                //并设置实例对象的length属性，定义包含的元素个数
+            this.context = selector;        //设置实例的属性，返回选择范围
+                return this;                    //返回当前实例
+        }
+
+        if (typeof selector === "string") {                 //如果选择符是字符串
+            var e = context.getElementsByTagName(selector); //获取指定名称的元素
+            for (var i = 0; i < e.length; i++) {            //遍历元素集合，并把所有元素填入到当前实例数组中
+                this[i] = e[i];                                         
+            }
+            this.length = e.length;
+            this.context = context;
+            return this;
+        } else {
+            this.length = 0;
+            this.context = context;
+            return this;
+        }
+
+/**
+ * 
+        this.length = 0;
+        this.test = function() {
+            return this.length;
+        }
+        return this;
+*/
+
+    },
+
+    //定义jQuery对象方法
+    html: function(val) {
+        jQuery.each(this, function(val) {   //调用jQuery.each()工具函数，为每个DOM元素执行回调函数
+            this.innerHTML = val;
+        }, val)
+    },
+
+    /**
+     * jQuery框架很多方法包含大量参数，且都是可选的，位置也没有固定要求
+     * 使用对象字面量作为参数
+     */
+    setOptions: function(options) {
+        this.options = {                //方法的默认值，可以扩展
+            StartColor: "#000",
+            EndCololr: "#DDC",
+            Background: false,
+            Step: 20,
+            Speed: 10
+        };
+        jQuery.extend(this.options, options || {}); //如果传递参数，则覆盖原默认参数
+    }
+}
+
+//使用jQuery的原型对象覆盖init构造器的原型对象
+jQuery.fn.init.prototype = jQuery.fn;
+
+//扩展jQuery工具函数
+jQuery.each = function(object, callback, args) {
+    for (var i = 0; i < object.length; i++) {
+        callback.call(object[i], args);
+    }
+    return object;
+}
+
+/**
+ * jQuery功能扩展函数extend()
+ * 方便用户快速扩展jQuery框架的功能，但不会破坏框架的原型结构
+ * 避免后期人工手动添加工具函数破坏jQuery框架的单纯性
+ * extend()把指定对象的方法复制给jQuery对象或jQuery.prototype对象
+ */
+jQuery.extend = jQuery.fn.extend = function(obj) {
+    for (var prop in obj) {
+        this[prop] = obj[prop];
+    }
+    return this;
+}
+
+//重新定义extend()
+jQuery.extend = jQuery.fn.extend = function(destination, source) {
+    for (var property in source) {
+        destination[property] = source[property];
+    }
+    return destination;
+}
+
+//扩展jQuery方法测试
+jQuery.fn.extend({
+    test: function() {
+    alert("测试扩展功能");
+    }
+})
+
+
+</script>
+
+
+</body>
+</html>
+

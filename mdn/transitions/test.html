@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transition</title>
+    <style>
+        .box {
+            border: 1px solid black;
+            width: 100px;
+            height: 100px;
+            background-color: cadetblue;
+            transition: transform 2s, width 2s, height 2s, background-color 2s;
+        }
+
+        .box:hover {
+            background-color: goldenrod;
+            width: 200px;
+            height: 200px;
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+<p>盒子的多个属性一起动画: width, height, background-color, transform. 将光标悬停在盒子上查看动画。</p>
+<div class="box"></div>
+</body>
+</html>
