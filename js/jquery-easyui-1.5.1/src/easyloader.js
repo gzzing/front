@@ -65,7 +65,7 @@
 		},
 		window:{
 			js:'jquery.window.js',
-			css:'window.css',
+			css:'window.style',
 			dependencies:['resizable','draggable','panel']
 		},
 		dialog:{
@@ -269,7 +269,7 @@
 	function loadCss(url, callback){
 		var link = document.createElement('link');
 		link.rel = 'stylesheet';
-		link.type = 'text/css';
+		link.type = 'text/style';
 		link.media = 'screen';
 		link.href = url;
 		document.getElementsByTagName('head')[0].appendChild(link);
