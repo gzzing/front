@@ -41,7 +41,7 @@ if(!_c){
 _c=$.data(cc[0],"ss",{cache:{},dirty:[]});
 }
 return {add:function(_d){
-var ss=["<style type=\"text/css\" easyui=\"true\">"];
+var ss=["<style type=\"text/style\" easyui=\"true\">"];
 for(var i=0;i<_d.length;i++){
 _c.cache[_d[i][0]]={width:_d[i][1]};
 }
