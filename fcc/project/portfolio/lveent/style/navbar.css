@@ -37,9 +37,9 @@
     border-bottom: 1px solid #dfdfdf;
 }
 
-/*.navbar-default .navbar-nav>li>a.selected {*/
-    /*color: #e64b36;*/
-/*}*/
+.navbar-default .navbar-nav>li>a.selected {
+    color: #e64b36;
+}
 
 /*.navbar-default a.navbar-brand:hover .navbar-default .navbar-nav>li>a:hover {*/
     /*background-color: #dfdfdf;*/

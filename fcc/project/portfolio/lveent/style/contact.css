@@ -1,0 +1,80 @@
+/*--- CONTACT ---*/
+#contact {
+    background: url('https://s18.postimg.org/z7eckrogp/seagulls_984529_1920.jpg') no-repeat top center fixed;
+    background-size: cover;
+}
+
+.social-cont {
+    max-width: 400px;
+}
+
+a.btn-default {
+    height: 44px;
+    border-radius: 0;
+    border: 0;
+    width: 180px;
+    text-align: left;
+    margin: 0 5px 10px 0;
+    position: relative;
+    background-color: #FFFFFF;
+    /*padding: 10px;*/
+    transition: all .35s;
+    padding: 0;
+    line-height: 47px;
+    overflow: hidden;
+}
+
+a.btn-default i {
+    display: block;
+    float: left;
+    /*position: absolute;*/
+    left: 12px;
+    top: 10px;
+    font-size: 24px;
+    color: #FFFFFF;
+    position: relative;
+    z-index: 1;
+}
+
+a.btn-default span {
+    position: relative;
+    z-index: 1;
+    padding-left: 30px;
+}
+
+a.btn-default:after {
+    content: '';
+    display: block;
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    transition: all .35s;
+}
+
+a.twitter-btn:after {
+    background-color: #55ACEE;
+}
+
+a.github-btn:after {
+    background-color: #171515;
+}
+
+a.linkedin-btn:after {
+    background-color: #0077B5;
+}
+
+a.fcc-btn:after {
+    background-color: #4B2B0D;
+}
+
+a.btn-default:hover, a.btn-default:focus {
+    background-color: #FFFFFF;
+    color: #FFFFFF;
+}
+
+a.btn-default:hover:after {
+    width: 100%;
+}

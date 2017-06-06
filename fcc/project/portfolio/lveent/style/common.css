@@ -1,7 +1,104 @@
-@import url(navbar.css);
-
+/* general */
 body {
     font-size: 16px;
     font-family: "Quattrocento Sans", sans-serif;
     line-height: 1.5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', serif;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.content-section {
+    min-height: 100vh;
+    padding-top: 70px;
+    padding-bottom: 20px;
+}
+
+.content-section h1 {
+    color: #9C9C9C;
+    font-weight: 400;
+    font-size: 30px;
+    display: inline-block;
+}
+
+.content-section h1:after {
+    content: '';
+    display: block;
+    border-bottom: 1px solid #DFDFDF;
+    padding-top: 3px;
+}
+
+.content-section p.lead {
+    font-family: 'Cardo', serif;
+    font-size: 19px;
+    line-height: 1.35em;
+    margin-bottom: 25px;
+}
+
+.content-section p.lead em {
+    font-size: 14px;
+}
+
+.content-section p em {
+    font-size: 14px;
+}
+
+.content-section p mark em {
+    font-size: inherit;
+}
+
+.content-section img.pull-right {
+    border: 1px solid #DFDFDF;
+    margin-top: 140px;
+}
+
+@media screen and (min-width: 768px) {
+    .content-section {
+        padding-top: 130px;
+    }
+
+    .content-section h1 {
+        font-size: 34px;
+    }
+
+    .content-section p.lead {
+        margin-bottom: 30px;
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .content-section {
+        padding-top: 160px;
+    }
+
+    .content-section h1 {
+        font-size: 38px;
+    }
+
+    .content-section h1:after {
+        padding-top: 5px;
+    }
+
+    .content-section p.lead {
+        font-size: 21px;
+        margin-bottom: 35px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .content-section {
+        padding-top: 160px;
+    }
+
+    .content-section h1:after {
+        padding-top: 7px;
+    }
+
+    .content-section p.lead {
+        font-size: 22px;
+        margin-bottom: 35px;
+    }
 }
