@@ -1,0 +1,154 @@
+/* ======= define font family from file ====== */
+@font-face {
+    font-family: Releway-ExtraBold;
+    src: url('../fonts/Raleway-Bold.ttf');
+}
+
+@font-face {
+    font-family: Releway-Bold;
+    src: url('../fonts/Raleway-Bold.ttf')
+}
+
+@font-face {
+    font-family: Raleway-Regular;
+    src: url('../fonts/Raleway-Regular.ttf')
+}
+
+@font-face {
+    font-family: Raleway-Black;
+    src: url('../fonts/Raleway-Black.ttf')
+}
+
+@font-face {
+    font-family: Raleway-Medium;
+    src: url('../fonts/Raleway-Medium.ttf')
+}
+
+/*=============== global ==================*/
+html {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    min-height: 100%;
+    line-height: 1.5;
+    background: #fff;
+}
+
+body {
+    background: #fff;
+    color: #fff;
+    font-family: Raleway-Regular, serif;
+    padding: 0;
+    margin: 0;
+}
+
+/*==========================================*/
+
+.back {
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: url('../images/overlay.png') center top;
+}
+
+.c-main, #c-wrapper {
+    width: 1280px;
+    background: #F4F4F4;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+
+.t-center {
+    text-align: center;
+}
+
+.t-left {
+    text-align: left;
+}
+
+#c-main {
+    position: absolute;
+    top: 0;
+    background: transparent;
+}
+
+.s-home {
+    background-size: cover;
+    background-position-x: 0;
+    background-position-y: 0;
+    height: 1000px;
+    position: relative;
+    text-shadow: #000 1px 1px;
+}
+
+#s-home1 {
+    background-image: url('../images/firecracker.jpg');
+}
+
+.s-home-title {
+    font-size: 72px;
+    padding-left: 58px;
+    padding-top: 260px;
+    letter-spacing: 2.5px;
+    line-height: 80px;
+    width: 66%;
+    font-family: Raleway-Black, serif;
+}
+
+.s-home-desc {
+    font-family: Raleway-Medium, serif;
+    font-size: 30px;
+    padding-left: 58px;
+    padding-top: 00px;
+    letter-spacing: 1.25px;
+    line-height: 45px;
+    width: 60%;
+}
+
+.s-home-signup {
+    text-align: center;
+    width: 520px;
+    padding-top: 30px;
+    padding-left: 58px;
+}
+
+.s-home-signup a,
+.s-home-signup a:hover,
+.s-home-signup a:visited {
+    text-decoration: none;
+    color: #fff;
+}
+
+.s-home-signup div {
+    font-family: Raleway-Black, serif;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: 50px;
+}
+
+.s-home-signup .s-home-btsignup {
+    font-family: Releway-Bold, serif;
+    background: #663399;
+    width: 270px;
+    height: 50px;
+    font-size: 14px;
+    border-radius: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    text-shadow: none;
+}
+
+.down-arrow {
+    position: absolute;
+    width: 43px;
+    height: 28px;
+    left: 50%;
+    bottom: 30px;
+    margin-left: -21px;
+}
+
